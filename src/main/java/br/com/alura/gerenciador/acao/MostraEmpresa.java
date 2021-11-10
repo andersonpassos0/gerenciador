@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class MostraEmpresa implements Acao {
 	
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		
 		System.out.println("Mostrando Empresa - Acao");
 		
@@ -22,6 +24,8 @@ public class MostraEmpresa implements Acao {
 		Empresa empresa = banco.buscaEmpresaPelaId(id);
 		
 		System.out.println(empresa.getNome());
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		request.setAttribute("empresa", empresa);
 		

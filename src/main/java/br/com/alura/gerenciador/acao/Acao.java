@@ -8,7 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public interface Acao {
 
-	String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+	String executa(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException;
 
 	
 
